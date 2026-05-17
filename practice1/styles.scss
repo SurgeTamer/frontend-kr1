@@ -1,0 +1,53 @@
+$primary: #8b5cf6;
+$accent-gold: #d4af37;
+$theme: dark;
+
+@mixin button($color) {
+  padding: 10px 14px;
+  background: $color;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+.card {
+  padding: 16px;
+  max-width: 320px;
+  margin: 24px auto;
+
+  @if $theme == dark {
+    background: #1a1520;
+    color: white;
+  }
+
+  &__image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 12px;
+  }
+
+  &__title {
+    font-size: 20px;
+    margin: 0 0 8px;
+  }
+
+  &__description {
+    font-size: 14px;
+    opacity: 0.85;
+    line-height: 1.5;
+    margin: 0 0 14px;
+  }
+
+  &--accent {
+    border: 2px solid $primary;
+    border-radius: 12px;
+  }
+}
+
+.btn {
+  @include button($primary);
+}
